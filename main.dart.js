@@ -62979,9 +62979,9 @@ p.toString
 p=A.a1(p).ax
 s=p.dx
 p=s==null?p.cy:s
-return A.abf(q,A.A4(r,A.ac5("images/profile-picture.jpeg",B.iu,r),p,r,1/0,r,r,1/0))}}
+return A.abf(q,A.A4(r,A.ac5("assets/images/profile-picture.jpeg",B.iu,r),p,r,1/0,r,r,1/0))}}
 A.a2I.prototype={
-$2(a,b){return new A.nY("images/edumate-home.png",new A.bM(null,t.C),null)},
+$2(a,b){return new A.nY("assets/images/edumate-home.png",new A.bM(null,t.C),null)},
 $S:377}
 A.a2B.prototype={
 $0(){},
