@@ -35,7 +35,7 @@
 
     <script>
         // The value below is injected by flutter build, do not touch.
-        var serviceWorkerVersion = "3154361242";
+        var serviceWorkerVersion = "2723243831";
 
     </script>
     <!-- This script adds the flutter initialization JS code -->
@@ -56,25 +56,94 @@
     </style>
 
     <!-- Loading indicator -->
-    <div id="loading">
-        <style>
-            body {
-                inset: 0;
-                overflow: hidden;
-                margin: 0;
-                padding: 0;
-                position: fixed;
+    <style>
+        body {
+            inset: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+        }
+
+        #loading {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        svg {
+            width: 3.25em;
+            -webkit-transform-origin: center;
+            -ms-transform-origin: center;
+            transform-origin: center;
+            -webkit-animation: rotate4 2s linear infinite;
+            animation: rotate4 2s linear infinite;
+        }
+
+        circle {
+            fill: none;
+            stroke: hsl(214, 97%, 59%);
+            stroke-width: 2;
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            -webkit-animation: dash4 1.5s ease-in-out infinite;
+            animation: dash4 1.5s ease-in-out infinite;
+        }
+
+        @-webkit-keyframes rotate4 {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate4 {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes dash4 {
+            0% {
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
             }
 
-            #loading {
-                width: 100%;
-                height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            50% {
+                stroke-dasharray: 90, 200;
+                stroke-dashoffset: -35px;
             }
-        </style>
-        <img src="anim/loading.gif" alt="loading" />
+
+            100% {
+                stroke-dashoffset: -125px;
+            }
+        }
+
+        @keyframes dash4 {
+            0% {
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+            }
+
+            50% {
+                stroke-dasharray: 90, 200;
+                stroke-dashoffset: -35px;
+            }
+
+            100% {
+                stroke-dashoffset: -125px;
+            }
+        }
+    </style>
+
+    <div id="loading">
+        <svg viewBox="25 25 50 50">
+            <circle r="20" cy="50" cx="50"></circle>
+        </svg>
     </div>
 
     <script>
