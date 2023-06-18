@@ -23295,9 +23295,9 @@ if(s)throw A.e(A.mB("`const Object()` cannot be used as the token."))
 A.pF(a)
 if(b!==r.a.get(a))throw A.e(A.mB("Platform interfaces must not be implemented with `implements`"))},
 a16:function a16(){},
-aoW(a){var s=A.bm(a,null,t.w).w.a.a
-if(s<600)return B.fK
-if(s>=600&&s<=840)return B.xy
+aoW(a){var s=A.bm(a,null,t.w).w.a,r=Math.min(Math.abs(s.a),Math.abs(s.b))
+if(r<600)return B.fK
+if(r>=600&&r<=840)return B.xy
 return B.e3},
 aoT(a){var s=A.aoW(a)
 if(s===B.fK)return 16
