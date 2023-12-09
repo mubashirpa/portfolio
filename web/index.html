@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+      If you are serving your web app in a path other than the root, change the
+      href value below to reflect the base path you are serving from.
+
+      The path provided below has to start and end with a slash "/" in order for
+      it to work correctly.
+
+      For more details:
+      * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+      This is a placeholder for base href that will be replaced by the value of
+      the `--base-href` argument provided to `flutter build`.
+    -->
+    <base href="/portfolio/" />
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="A new Flutter project.">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="portfolio">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon-32.png" />
+    <link rel="icon" type="image/png" href="favicon-16.png" />
+
+    <title>Portfolio</title>
+    <link rel="manifest" href="manifest.json">
+
+    <script>
+        // The value below is injected by flutter build, do not touch.
+        var serviceWorkerVersion = null;
+
+    </script>
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer></script>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #FEFBFF;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1B1B1F;
+            }
+        }
+    </style>
+
+    <!-- Loading indicator -->
+    <style>
+        body {
+            inset: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+        }
+
+        #loading {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        svg {
+            width: 3.25em;
+            -webkit-transform-origin: center;
+            -ms-transform-origin: center;
+            transform-origin: center;
+            -webkit-animation: rotate4 2s linear infinite;
+            animation: rotate4 2s linear infinite;
+        }
+
+        circle {
+            fill: none;
+            stroke: hsl(214, 97%, 59%);
+            stroke-width: 2;
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            -webkit-animation: dash4 1.5s ease-in-out infinite;
+            animation: dash4 1.5s ease-in-out infinite;
+        }
+
+        @-webkit-keyframes rotate4 {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate4 {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes dash4 {
+            0% {
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+            }
+
+            50% {
+                stroke-dasharray: 90, 200;
+                stroke-dashoffset: -35px;
+            }
+
+            100% {
+                stroke-dashoffset: -125px;
+            }
+        }
+
+        @keyframes dash4 {
+            0% {
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+            }
+
+            50% {
+                stroke-dasharray: 90, 200;
+                stroke-dashoffset: -35px;
+            }
+
+            100% {
+                stroke-dashoffset: -125px;
+            }
+        }
+    </style>
+
+    <div id="loading">
+        <svg viewBox="25 25 50 50">
+            <circle r="20" cy="50" cx="50"></circle>
+        </svg>
+    </div>
+
+    <script>
+        window.addEventListener('load', function (ev) {
+            var loading = document.querySelector('#loading');
+
+            // Download main.dart.js
+            _flutter.loader.loadEntrypoint({
+                serviceWorker: {
+                    serviceWorkerVersion: serviceWorkerVersion,
+                },
+                onEntrypointLoaded: function (engineInitializer) {
+                    engineInitializer.initializeEngine()
+                        .then(function (appRunner) {
+                            appRunner.runApp();
+                        })
+                        .then(function (app) {
+                            loading.remove()
+                        });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
