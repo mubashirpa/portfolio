@@ -11,6 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # Only works with v2
       - uses: subosito/flutter-action@v1
+      - run: flutter pub get
       - uses: bluefireteam/flutter-gh-pages@v7
         with:
           webRenderer: html
+          baseHref: /portfolio/
