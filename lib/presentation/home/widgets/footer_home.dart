@@ -14,7 +14,8 @@ class FooterHome extends StatelessWidget {
 
     return Column(
       children: [
-        const SizedBox(height: 48),
+        const Divider(),
+        SizedBox(height: screenInset),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: screenInset),
           child: Flex(
@@ -49,7 +50,7 @@ class FooterHome extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.0),
       child: Text(
-        'Passionate about technology and its limitless possibilities. Android & Flutter Developer. Constantly pushing boundaries to bring ideas to life through coding and design. Let\'s connect and explore the world of innovation together!',
+        'Passionate about technology and its limitless possibilities. Mobile application developer. Constantly pushing boundaries to bring ideas to life through coding and design. Let\'s connect and explore the world of innovation together!',
       ),
     );
   }
