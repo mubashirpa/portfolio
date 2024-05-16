@@ -31,6 +31,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       HomeScreen(),
       AboutScreen(),
       ProjectsScreen(),
+      ProjectsScreen(),
       ContactScreen(),
     ];
 

@@ -20,9 +20,14 @@ const List<HomeNavigationDestination> homeDestinations = [
     Icon(Icons.info),
   ),
   HomeNavigationDestination(
-    'Works',
+    'Services',
     Icon(Icons.work_outline_outlined),
     Icon(Icons.work),
+  ),
+  HomeNavigationDestination(
+    'Projects',
+    Icon(Icons.api_outlined),
+    Icon(Icons.api),
   ),
   HomeNavigationDestination(
     'Contact',

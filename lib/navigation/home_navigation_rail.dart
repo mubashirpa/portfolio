@@ -32,7 +32,7 @@ class HomeNavigationRail extends StatelessWidget {
       return Column(
         children: [
           SizedBox(
-            height: 48, // toolbar height (64) - margin top (16)
+            height: 48, // toolbar height (64) - margin top of navigation rail (16)
             child: Row(
               children: [
                 IconButton(
@@ -44,13 +44,13 @@ class HomeNavigationRail extends StatelessWidget {
               ],
             ),
           ),
-          // FloatingActionButton(
-          //   elevation: 0,
-          //   onPressed: () {
-          //     // Add your onPressed code here!
-          //   },
-          //   child: const Text('CV'),
-          // ),
+          FloatingActionButton(
+            elevation: 0,
+            onPressed: () {
+              // Add your onPressed code here!
+            },
+            child: const Icon(Icons.badge_outlined),
+          ),
           isExpanded ? const SizedBox() : const SizedBox(height: 56)
         ],
       );
@@ -62,7 +62,6 @@ class HomeNavigationRail extends StatelessWidget {
       useIndicator: true,
       onDestinationSelected: onDestinationSelected,
       labelType: NavigationRailLabelType.all,
-      // backgroundColor: Theme.of(context).colorScheme.background,
       groupAlignment: isExpanded ? 0.0 : -1.0,
       leading: leading(),
     );

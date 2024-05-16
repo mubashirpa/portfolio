@@ -63,6 +63,17 @@ class PortfolioNavigationDrawer extends StatelessWidget {
       selectedIndex: selectedIndex,
       children: <Widget>[
         header(),
+        Padding(
+          padding: const EdgeInsets.only(left: 12.0, right: 12.0, bottom: 56.0),
+          child: FloatingActionButton.extended(
+            elevation: 0,
+            onPressed: () {
+              // Add your onPressed code here!
+            },
+            label: const Text("Resume"),
+            icon: const Icon(Icons.badge_outlined),
+          ),
+        ),
         ...homeDestinations.map(
           (HomeNavigationDestination destination) {
             return NavigationDrawerDestination(
